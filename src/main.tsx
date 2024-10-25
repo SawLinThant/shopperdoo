@@ -12,6 +12,8 @@ import { CssBaseline } from "@mui/material";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <CssBaseline />
-    <App />
+    
+      <App />
+    
   </StrictMode>
 );

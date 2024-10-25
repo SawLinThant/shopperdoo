@@ -2,7 +2,11 @@ import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { EllipsisTypography } from "../common/EllipsisTypography";
 import { useNavigate } from "react-router-dom";
 
-const ProductCard = () => {
+
+type ProductCardProps = {
+  campaign: String
+}
+const ProductCard = ({campaign}:ProductCardProps) => {
   const navigate = useNavigate();
   return (
     <Paper
@@ -33,12 +37,22 @@ const ProductCard = () => {
           width:'100%',
           //clipPath: "polygon(0 0, 100% 0, 90% 100%, 0 100%)",
           pl: 0.5,
-          pr: 3,
         }}
       >
-        <Typography sx={{display:'flex',flexDirection:'column',alignItems:'start', padding:'0.5rem'}} variant="caption" color="white" fontWeight="bold">
-          Offer Ending on 
-          <Typography fontSize="1.25rem" fontWeight="bold" sx={{color:'yellowgreen'}}>16 Nov 2024</Typography>
+        <Typography sx={{display:'flex',flexDirection:'column',alignItems:'start', padding:'0.5rem'}} variant="caption" color="white" fontWeight="semibold">
+        
+        <Typography fontSize="" fontWeight="semibold" sx={{color:'white'}}>Campaign {campaign} </Typography>
+        <Stack sx={{
+          display:'flex',
+          flexDirection:'row',
+          alignItems:'center',
+          gap:'7px',
+          width:'100%'
+        }}>
+           <Typography fontSize="" fontWeight="semibold" sx={{color:'white'}}>ending on </Typography>
+           <Typography fontSize="1.25rem" fontWeight="bold" sx={{ wordSpacing:'0'}}>16 Nov 2024</Typography>
+        </Stack>
+         
         </Typography>
       </Box>
       <Box
@@ -53,8 +67,11 @@ const ProductCard = () => {
           },
         }}
       />
-      <EllipsisTypography variant="body2">
-      [Group Buy] Aroma Bliss Booster Beads for Clothes & Textiles | 200g Content Lasting Fragrance For Up To A Week
+      <EllipsisTypography sx={{
+        fontFamily:'"Lato",sans-serif',
+        fontStyle:'italic'
+      }}  variant="body2">
+      Join the campaign and enjoy the offer of a lifetime!
       </EllipsisTypography>
       <Stack direction={"row"} sx={{ width: "100%", height: "30px" }}></Stack>
       <Stack

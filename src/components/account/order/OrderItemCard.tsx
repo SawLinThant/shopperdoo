@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 interface IOrderItemCardProps {
   cardType: "ONGOING" | "OFFER" | "JOIN";
+  campaignName: String
 }
 
 const OrderItemCard = (props: IOrderItemCardProps) => {
@@ -44,13 +45,14 @@ const OrderItemCard = (props: IOrderItemCardProps) => {
               alignItems: "center",
             }}
           >
-            <Typography sx={{}} variant="h6">
+            <Typography sx={{fontFamily: '"Lato", sans-serif'}} variant="h6">
               Campaign
             </Typography>
             <Typography
               color="#980101"
               variant="h6"
               sx={{
+                fontFamily: '"Lato", sans-serif',
                 fontWeight: 600,
                 cursor: "pointer",
                 "&:hover": {
@@ -61,7 +63,7 @@ const OrderItemCard = (props: IOrderItemCardProps) => {
                 navigate(`/product/234?type=${props.cardType}`);
               }}
             >
-              16112024-0001
+              {props.campaignName}
             </Typography>
           </Box>
           <EllipsisTypography maxWidth={500} variant="body2">

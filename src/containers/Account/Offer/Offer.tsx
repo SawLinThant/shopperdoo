@@ -65,8 +65,8 @@ const Offer = () => {
               </Typography>
             </Box>
             <Divider />
-            <OrderItemCard cardType="ONGOING"/>
-            <OrderItemCard cardType="ONGOING"/>
+            <OrderItemCard campaignName="16112024-0001" cardType="ONGOING"/>
+            <OrderItemCard campaignName="16112024-0002" cardType="ONGOING"/>
             <Divider />
             <Box
               sx={{
@@ -152,8 +152,8 @@ const Offer = () => {
               </Typography>
             </Box>
             <Divider />
-            <OrderItemCard cardType="OFFER"/>
-            <OrderItemCard cardType="OFFER"/>
+            <OrderItemCard campaignName="16112024-0001" cardType="OFFER"/>
+            <OrderItemCard campaignName="16112024-0002" cardType="OFFER"/>
             <Divider />
             <Box
               sx={{

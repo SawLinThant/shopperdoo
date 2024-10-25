@@ -42,7 +42,7 @@ const DiscoverCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0001" />
           </Grid2>
           <Grid2
             size={{
@@ -55,7 +55,7 @@ const DiscoverCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0002" />
           </Grid2>
           <Grid2
             size={{
@@ -68,7 +68,7 @@ const DiscoverCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0003" />
           </Grid2>
           <Grid2
             size={{
@@ -81,7 +81,7 @@ const DiscoverCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0004" />
           </Grid2>
           <Grid2
             size={{
@@ -94,7 +94,7 @@ const DiscoverCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0005" />
           </Grid2>
           <Grid2
             size={{
@@ -107,7 +107,7 @@ const DiscoverCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0006" />
           </Grid2>
           <Grid2
             size={{
@@ -120,7 +120,7 @@ const DiscoverCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0007" />
           </Grid2>
           <Grid2
             size={{
@@ -133,7 +133,7 @@ const DiscoverCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0008" />
           </Grid2>
         </Grid2>
       </Stack>

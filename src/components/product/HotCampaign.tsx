@@ -42,7 +42,7 @@ const HotCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0001" />
           </Grid2>
           <Grid2
             size={{
@@ -55,7 +55,7 @@ const HotCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0002" />
           </Grid2>
           <Grid2
             size={{
@@ -68,7 +68,7 @@ const HotCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0003" />
           </Grid2>
           <Grid2
             size={{
@@ -81,7 +81,7 @@ const HotCampaign = () => {
               display: "flex",
             }}
           >
-            <ProductCard />
+            <ProductCard campaign="16112024-0004" />
           </Grid2>
         </Grid2>
       </Stack>

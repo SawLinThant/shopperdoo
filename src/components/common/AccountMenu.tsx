@@ -84,7 +84,7 @@ const AccountMenu = () => {
             borderRadius: "0.3rem",
           }}
         >
-          Offer
+          Offers
         </MenuItem>
         <Divider />
         <MenuItem

@@ -27,7 +27,7 @@ const DiscoverCampaign = () => {
             textAlign={"center"}
             variant="h5"
           >
-            DISCOVER CAMPAIGN
+            DISCOVER MORE CAMPAIGNS
           </Typography>
         </Box>
         <Grid2 container spacing={2} sx={{ width: "100%" }}>

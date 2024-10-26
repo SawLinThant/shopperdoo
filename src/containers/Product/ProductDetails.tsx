@@ -83,7 +83,7 @@ const ProductDetails = () => {
                   color={"#fe0019"}
                   fontSize={"22px"}
                 >
-                  2,000
+                  904
                 </Typography>{" "}
                 joined
               </Typography>

@@ -27,7 +27,7 @@ const HotCampaign = () => {
             textAlign={"center"}
             variant="h5"
           >
-            HOT CAMPAIGN
+            HOT CAMPAIGNS
           </Typography>
         </Box>
         <Grid2 container spacing={2} sx={{ width: "100%" }}>

@@ -108,7 +108,7 @@ const OrderItemCard = (props: IOrderItemCardProps) => {
                       "https://shopee.sg/product/1347290168/25135993923/";
                   }}
                 >
-                  BuyOffer
+                  Buy Offer
                 </Button>
               )}
             </Box>

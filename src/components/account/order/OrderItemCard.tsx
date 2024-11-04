@@ -1,10 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
 import { EllipsisTypography } from "../../common/EllipsisTypography";
 import { useNavigate } from "react-router-dom";
+import { Product } from "../../../constant/products";
 
 interface IOrderItemCardProps {
   cardType: "ONGOING" | "OFFER" | "JOIN";
-  campaignName: String
+  campaignName: string;
+  productDetail: Product;
 }
 
 const OrderItemCard = (props: IOrderItemCardProps) => {
@@ -29,7 +31,7 @@ const OrderItemCard = (props: IOrderItemCardProps) => {
       >
         <Box
           component={"img"}
-          src="https://down-sg.img.susercontent.com/file/sg-11134207-7rdye-m04gl5qw0x8p32.webp"
+          src={props.productDetail.image[0] || ""}
           sx={{
             objectFit: "contain",
             width: 100,
@@ -45,7 +47,7 @@ const OrderItemCard = (props: IOrderItemCardProps) => {
               alignItems: "center",
             }}
           >
-            <Typography sx={{fontFamily: '"Lato", sans-serif'}} variant="h6">
+            <Typography sx={{ fontFamily: '"Lato", sans-serif' }} variant="h6">
               Campaign
             </Typography>
             <Typography
@@ -60,15 +62,16 @@ const OrderItemCard = (props: IOrderItemCardProps) => {
                 },
               }}
               onClick={() => {
-                navigate(`/product/234?type=${props.cardType}`);
+                navigate(
+                  `/product/${props.productDetail.id}?type=${props.cardType}`
+                );
               }}
             >
               {props.campaignName}
             </Typography>
           </Box>
           <EllipsisTypography maxWidth={500} variant="body2">
-            [Group Buy] Aroma Bliss Booster Beads for Clothes & Textiles | 200g
-            Content Lasting Fragrance For Up To A Week
+            {props.productDetail.name}
           </EllipsisTypography>
           {/* <Typography variant="caption" color="text.secondary">
             Variation: grey+green
@@ -104,8 +107,7 @@ const OrderItemCard = (props: IOrderItemCardProps) => {
                     fontWeight: "bold",
                   }}
                   onClick={() => {
-                    window.location.href =
-                      "https://shopee.sg/product/1347290168/25135993923/";
+                    window.location.href = props.productDetail.shopeeLink;
                   }}
                 >
                   Buy Offer

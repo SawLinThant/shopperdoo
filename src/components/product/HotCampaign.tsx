@@ -1,7 +1,9 @@
 import { Box, Grid2, Paper, Stack, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
+import { productList } from "../../constant/products";
 
 const HotCampaign = () => {
+  const hotCampaignProductList=productList.slice(0,4)
   return (
     <Paper variant="outlined" sx={{ padding: 2, pt: 0 }}>
       <Stack direction={"column"} alignItems={"center"} gap={2}>
@@ -31,58 +33,27 @@ const HotCampaign = () => {
           </Typography>
         </Box>
         <Grid2 container spacing={2} sx={{ width: "100%" }}>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0001" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0002" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0003" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0004" />
-          </Grid2>
+          {hotCampaignProductList.map((product, index) => {
+            return (
+              <Grid2
+                size={{
+                  md: 3,
+                  xs: 6,
+                }}
+                sx={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  display: "flex",
+                }}
+                key={index + product.id}
+              >
+                <ProductCard
+                  campaign={{ campaign: "16112024-0004" }}
+                  detail={product}
+                />
+              </Grid2>
+            );
+          })}
         </Grid2>
       </Stack>
     </Paper>

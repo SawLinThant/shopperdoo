@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { OrderItemCard } from "../../../components/account/order";
+import { productList } from "../../../constant/products";
 
 const Offer = () => {
   const [tab, setTab] = useState("ongoing");
@@ -65,8 +66,16 @@ const Offer = () => {
               </Typography>
             </Box>
             <Divider />
-            <OrderItemCard campaignName="16112024-0001" cardType="ONGOING"/>
-            <OrderItemCard campaignName="16112024-0002" cardType="ONGOING"/>
+            <OrderItemCard
+              campaignName="16112024-0001"
+              cardType="ONGOING"
+              productDetail={productList[0]}
+            />
+            <OrderItemCard
+              campaignName="16112024-0002"
+              cardType="ONGOING"
+              productDetail={productList[1]}
+            />
             <Divider />
             <Box
               sx={{
@@ -81,8 +90,8 @@ const Offer = () => {
                 variant="body2"
                 sx={{
                   alignItems: "center",
-                  display:"flex",
-                  gap:1
+                  display: "flex",
+                  gap: 1,
                 }}
               >
                 Total{" "}
@@ -152,8 +161,16 @@ const Offer = () => {
               </Typography>
             </Box>
             <Divider />
-            <OrderItemCard campaignName="16112024-0001" cardType="OFFER"/>
-            <OrderItemCard campaignName="16112024-0002" cardType="OFFER"/>
+            <OrderItemCard
+              campaignName="16112024-0001"
+              cardType="OFFER"
+              productDetail={productList[2]}
+            />
+            <OrderItemCard
+              campaignName="16112024-0002"
+              cardType="OFFER"
+              productDetail={productList[3]}
+            />
             <Divider />
             <Box
               sx={{
@@ -168,8 +185,8 @@ const Offer = () => {
                 variant="body2"
                 sx={{
                   alignItems: "center",
-                  display:"flex",
-                  gap:1
+                  display: "flex",
+                  gap: 1,
                 }}
               >
                 Total{" "}

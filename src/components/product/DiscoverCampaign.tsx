@@ -1,7 +1,10 @@
 import { Box, Grid2, Paper, Stack, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
+import { productList } from "../../constant/products";
+
 
 const DiscoverCampaign = () => {
+  const discoverCampaignProductList=productList.slice(4,8)
   return (
     <Paper variant="outlined" sx={{ padding: 2, pt: 0 }}>
       <Stack direction={"column"} alignItems={"center"} gap={2}>
@@ -31,110 +34,27 @@ const DiscoverCampaign = () => {
           </Typography>
         </Box>
         <Grid2 container spacing={2} sx={{ width: "100%" }}>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0001" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0002" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0003" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0004" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0005" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0006" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0007" />
-          </Grid2>
-          <Grid2
-            size={{
-              md: 3,
-              xs: 6,
-            }}
-            sx={{
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-          >
-            <ProductCard campaign="16112024-0008" />
-          </Grid2>
+          {discoverCampaignProductList.map((product, index) => {
+            return (
+              <Grid2
+                size={{
+                  md: 3,
+                  xs: 6,
+                }}
+                sx={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  display: "flex",
+                }}
+                key={index + product.id}
+              >
+                <ProductCard
+                  campaign={{ campaign: "16112024-0004" }}
+                  detail={product}
+                />
+              </Grid2>
+            );
+          })}
         </Grid2>
       </Stack>
     </Paper>

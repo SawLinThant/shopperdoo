@@ -9,12 +9,15 @@ import {
 } from "@mui/material";
 import SBreadcrumbs from "../../components/common/SBreadcrumbs";
 import { ProductDetailsImage } from "../../components/product";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
+import { productList } from "../../constant/products";
 // import ProductOption from "../../components/product/ProductOption";
 // import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const ProductDetails = () => {
   const [searchParams] = useSearchParams();
+  const { id } = useParams();
+  const product = productList.find((product) => product.id == id);
   const offerType = searchParams.get("type") || "";
   return (
     <Container maxWidth="lg" sx={{ my: 3 }}>
@@ -53,7 +56,7 @@ const ProductDetails = () => {
                 gap: 1,
               }}
             >
-              <ProductDetailsImage />
+              <ProductDetailsImage productImageUrls={product?.image || []}/>
             </Box>
             <Box
               sx={{
@@ -65,10 +68,7 @@ const ProductDetails = () => {
                 // gap: 1,
               }}
             >
-              <Typography variant="h6">
-                [Group Buy] Aroma Bliss Booster Beads for Clothes & Textiles |
-                200g Content Lasting Fragrance For Up To A Week
-              </Typography>
+              <Typography variant="h6">{product?.name}</Typography>
               <Typography
                 // variant="caption"
                 color="#fe0019"
@@ -112,7 +112,7 @@ const ProductDetails = () => {
                   variant="h5"
                   sx={{ fontWeight: 600 }}
                 >
-                  $6.43
+                  {product?.price}
                 </Typography>
               </Box>
               {/* <Grid2 container spacing={2} mt={1}>
@@ -185,7 +185,7 @@ const ProductDetails = () => {
                   onClick={(e) => {
                     if (offerType == "OFFER") {
                       window.location.href =
-                        "https://shopee.sg/product/1347290168/25135993923/";
+                        product?.shopeeLink || "";
                     } else {
                       e.preventDefault();
                     }
@@ -209,42 +209,8 @@ const ProductDetails = () => {
             >
               <Typography fontWeight={500}>Product Description</Typography>
             </Box>
-            <Box sx={{ p: 2 }}>
-              Introducing Fragrance Booster: Unveil the Secret to Long-lasting
-              Scents
-              <br /> Are you tired of fleeting fragrances that vanish too soon?
-              Say hello to our Fragrance Booster, your ultimate solution for a
-              scent that lasts.
-              <br />
-              <br /> FOR BEST PERFORMANCE, USE MINIMUM 2 CAPS
-              <br />
-              <br />
-              Nanoscale Microcapsules: Dive into the realm of advanced fragrance
-              technology with our nanoscale microcapsules. These tiny marvels
-              encapsulate the essence of your favorite scents, ensuring a
-              lasting aroma that stays with you throughout the day.
-              <br />
-              <br /> Long-lasting Fragrance: Experience the joy of a scent that
-              lingers. Our Fragrance Booster doesn't just offer a brief whiff of
-              freshness—it delivers a scent experience that endures for up to a
-              week. Say goodbye to the disappointment of scents that fade too
-              quickly.
-              <br />
-              <br />
-              Easy Application: Incorporating our Fragrance Booster into your
-              laundry routine is a breeze. Simply add it to your wash cycle, and
-              watch as the fragrance capsules adhere to your clothes, infusing
-              them with a delightful aroma that lasts wash after wash.
-              <br />
-              <br /> Versatile Use: Not limited to just laundry, our Fragrance
-              Booster is perfect for enhancing the scent of various textiles.
-              From clothing to bedding, enjoy the enduring fragrance in every
-              aspect of your daily life.
-              <br />
-              <br /> Gentle and Effective: Rest assured, our Fragrance Booster
-              is formulated to be gentle on fabrics while effectively delivering
-              long-lasting scent enhancement. It's the perfect combination of
-              efficacy and care for your cherished textiles.
+            <Box sx={{ p: 2,whiteSpace:'pre-line' }}>
+              <span>{`${product?.description}`}</span>
             </Box>
           </Stack>
         </Paper>

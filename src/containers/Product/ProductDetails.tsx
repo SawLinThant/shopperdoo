@@ -30,7 +30,7 @@ const ProductDetails = () => {
               href: "/product/list",
             },
             {
-              text: "[Group Buy] Aroma Bliss Booster Beads for Clothes & Textiles | 200g Content Lasting Fragrance For Up To A Week",
+              text: product?.name || "",
             },
           ]}
         />

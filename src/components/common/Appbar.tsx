@@ -17,7 +17,7 @@ import { Redeem } from "@mui/icons-material";
 
 const Appbar = () => {
   const navigate = useNavigate();
-  const isAUthorized = false; //change to session when convert to t3
+  const isAUthorized = true; //change to session when convert to t3
   return (
     <AppBar position="sticky" elevation={0}>
       <Container maxWidth="lg">

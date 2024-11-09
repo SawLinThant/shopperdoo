@@ -69,13 +69,13 @@ const Offer = () => {
             <OrderItemCard
               campaignName="16112024-0001"
               cardType="ONGOING"
-              productDetail={productList[0]}
+              productDetail={productList[6]}
             />
-            <OrderItemCard
+            {/* <OrderItemCard
               campaignName="16112024-0002"
               cardType="ONGOING"
               productDetail={productList[1]}
-            />
+            /> */}
             <Divider />
             <Box
               sx={{
@@ -101,7 +101,7 @@ const Offer = () => {
                   fontWeight={"bold"}
                   variant="h6"
                 >
-                  $6
+                  $3
                 </Typography>
               </Typography>
               <Box
@@ -164,13 +164,13 @@ const Offer = () => {
             <OrderItemCard
               campaignName="16112024-0001"
               cardType="OFFER"
-              productDetail={productList[2]}
+              productDetail={productList[7]}
             />
-            <OrderItemCard
+            {/* <OrderItemCard
               campaignName="16112024-0002"
               cardType="OFFER"
               productDetail={productList[3]}
-            />
+            /> */}
             <Divider />
             <Box
               sx={{
@@ -196,7 +196,7 @@ const Offer = () => {
                   fontWeight={"bold"}
                   variant="h6"
                 >
-                  $6
+                  $3
                 </Typography>
               </Typography>
               <Box

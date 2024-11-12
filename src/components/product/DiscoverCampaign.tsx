@@ -49,7 +49,7 @@ const DiscoverCampaign = () => {
                 key={index + product.id}
               >
                 <ProductCard
-                  campaign={{ campaign: "16112024-0004" }}
+                  campaign={{ campaign: "16112024-000"+(5+index) }}
                   detail={product}
                 />
               </Grid2>

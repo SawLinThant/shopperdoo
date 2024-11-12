@@ -48,7 +48,7 @@ const HotCampaign = () => {
                 key={index + product.id}
               >
                 <ProductCard
-                  campaign={{ campaign: "16112024-0004" }}
+                  campaign={{ campaign: "16112024-000"+(index+1) }}
                   detail={product}
                 />
               </Grid2>

@@ -67,7 +67,7 @@ const Offer = () => {
             </Box>
             <Divider />
             <OrderItemCard
-              campaignName="16112024-0001"
+              campaignName="16112024-0007"
               cardType="ONGOING"
               productDetail={productList[6]}
             />
@@ -162,7 +162,7 @@ const Offer = () => {
             </Box>
             <Divider />
             <OrderItemCard
-              campaignName="16112024-0001"
+              campaignName="16112024-0008"
               cardType="OFFER"
               productDetail={productList[7]}
             />

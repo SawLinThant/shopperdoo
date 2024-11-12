@@ -12,7 +12,7 @@ const Register = () => {
         alignContent:'center',
         alignItems: "center",
         justifyContent: "start",
-        height:"100vh",
+        // height:"100vh",
         marginTop:'100px'
       }}
     >

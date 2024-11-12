@@ -4,7 +4,7 @@ import { productList } from "../../constant/products";
 
 
 const DiscoverCampaign = () => {
-  const discoverCampaignProductList=productList.slice(4,8)
+  const discoverCampaignProductList=productList.slice(4,6)
   return (
     <Paper variant="outlined" sx={{ padding: 2, pt: 0 }}>
       <Stack direction={"column"} alignItems={"center"} gap={2}>

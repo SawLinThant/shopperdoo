@@ -17,7 +17,7 @@ import { Redeem } from "@mui/icons-material";
 
 const Appbar = () => {
   const navigate = useNavigate();
-
+  const isAUthorized = true; //change to session when convert to t3
   return (
     <AppBar position="sticky" elevation={0}>
       <Container maxWidth="lg">
@@ -76,14 +76,17 @@ const Appbar = () => {
               >
                 <SearchIcon fontSize="inherit" sx={{ color: "white" }} />
               </IconButton>
-              <IconButton
-                size="large"
-                onClick={() => {
-                  navigate("/account/offer");
-                }}
-              >
-                <Redeem fontSize="inherit" sx={{ color: "white" }} />
-              </IconButton>
+
+              {isAUthorized && (
+                <IconButton
+                  size="large"
+                  onClick={() => {
+                    navigate("/account/offer");
+                  }}
+                >
+                  <Redeem fontSize="inherit" sx={{ color: "white" }} />
+                </IconButton>
+              )}
 
               <AccountMenu />
             </Box>

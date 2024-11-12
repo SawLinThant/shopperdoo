@@ -6,6 +6,8 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useNavigate } from "react-router-dom";
+import { Modal } from "@mui/material";
+import { Login } from "../account/login";
 
 const AccountMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<Element | null>(null);
@@ -23,8 +25,40 @@ const AccountMenu = () => {
     navigate("/");
   };
 
+  const isAuthorized = false; // change to session hook when convert to t3
+  const [openLogin, setOpenLogin] = React.useState(false);
+  const handleOpenLogin = () => {
+    setOpenLogin(true);
+    handleClose();
+  };
+
+  const handleCloseLogin = () => setOpenLogin(false);
+
   return (
     <>
+      <Modal
+        open={openLogin}
+        onClose={handleCloseLogin}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 400,
+            bgcolor: "background.paper",
+            // border: "2px solid #000",
+            boxShadow: 24,
+            p: 4,
+            borderRadius:'5px'
+          }}
+        >
+          <Login />
+        </Box>
+      </Modal>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <IconButton size="large" onClick={handleClick}>
           <AccountCircleIcon fontSize="inherit" sx={{ color: "white" }} />
@@ -65,36 +99,53 @@ const AccountMenu = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem
-          onClick={() => {
-            navigate("/account/profile");
-          }}
-          sx={{
-            borderRadius: "0.3rem",
-            width: "200px",
-          }}
-        >
-          Profile
-        </MenuItem>
-        <MenuItem
-          onClick={() => {
-            navigate("/account/offer");
-          }}
-          sx={{
-            borderRadius: "0.3rem",
-          }}
-        >
-          Offers
-        </MenuItem>
-        <Divider />
-        <MenuItem
-          onClick={handleLogout}
-          sx={{
-            borderRadius: "0.3rem",
-          }}
-        >
-          Logout
-        </MenuItem>
+        {isAuthorized && (
+          <>
+            <MenuItem
+              onClick={() => {
+                navigate("/account/profile");
+              }}
+              sx={{
+                borderRadius: "0.3rem",
+                width: "200px",
+              }}
+            >
+              Profile
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                navigate("/account/offer");
+              }}
+              sx={{
+                borderRadius: "0.3rem",
+              }}
+            >
+              Offers
+            </MenuItem>
+            <Divider />
+            <MenuItem
+              onClick={handleLogout}
+              sx={{
+                borderRadius: "0.3rem",
+              }}
+            >
+              Logout
+            </MenuItem>
+          </>
+        )}
+        {!isAuthorized && (
+          <>
+            <MenuItem
+              onClick={handleOpenLogin}
+              sx={{
+                borderRadius: "0.3rem",
+                width: "200px",
+              }}
+            >
+              Login
+            </MenuItem>
+          </>
+        )}
       </Menu>
     </>
   );

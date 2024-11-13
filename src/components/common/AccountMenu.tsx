@@ -25,7 +25,7 @@ const AccountMenu = () => {
     navigate("/");
   };
 
-  const isAuthorized = false; // change to session hook when convert to t3
+  const isAuthorized = true; // change to session hook when convert to t3
   const [openLogin, setOpenLogin] = React.useState(false);
   const handleOpenLogin = () => {
     setOpenLogin(true);

@@ -70,6 +70,7 @@ const Offer = () => {
               campaignName="16112024-0007"
               cardType="ONGOING"
               productDetail={productList[6]}
+              joinedNumber={900}
             />
             {/* <OrderItemCard
               campaignName="16112024-0002"
@@ -165,6 +166,7 @@ const Offer = () => {
               campaignName="16112024-0008"
               cardType="OFFER"
               productDetail={productList[7]}
+              joinedNumber={904}
             />
             {/* <OrderItemCard
               campaignName="16112024-0002"

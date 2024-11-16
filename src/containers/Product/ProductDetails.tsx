@@ -19,6 +19,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   const product = productList.find((product) => product.id == id);
   const offerType = searchParams.get("type") || "";
+  const joinedNumber = searchParams.get("joined") || "";
   return (
     <Container maxWidth="lg" sx={{ my: 3 }}>
       <Stack direction={"column"} gap={3}>
@@ -83,7 +84,7 @@ const ProductDetails = () => {
                   color={"#fe0019"}
                   fontSize={"22px"}
                 >
-                  904
+                  {joinedNumber || 0}
                 </Typography>{" "}
                 joined
               </Typography>

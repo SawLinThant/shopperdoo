@@ -2,9 +2,8 @@ import { Box, Grid2, Paper, Stack, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { productList } from "../../constant/products";
 
-
 const DiscoverCampaign = () => {
-  const discoverCampaignProductList=productList.slice(4,6)
+  const discoverCampaignProductList = productList.slice(4, 6);
   return (
     <Paper variant="outlined" sx={{ padding: 2, pt: 0 }}>
       <Stack direction={"column"} alignItems={"center"} gap={2}>
@@ -49,7 +48,10 @@ const DiscoverCampaign = () => {
                 key={index + product.id}
               >
                 <ProductCard
-                  campaign={{ campaign: "16112024-000"+(5+index) }}
+                  campaign={{
+                    campaign: "16112024-000" + (5 + index),
+                    joinedNumber: 800 + index * 10,
+                  }}
                   detail={product}
                 />
               </Grid2>

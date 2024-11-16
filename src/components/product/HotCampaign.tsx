@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import { productList } from "../../constant/products";
 
 const HotCampaign = () => {
-  const hotCampaignProductList=productList.slice(0,4)
+  const hotCampaignProductList = productList.slice(0, 4);
   return (
     <Paper variant="outlined" sx={{ padding: 2, pt: 0 }}>
       <Stack direction={"column"} alignItems={"center"} gap={2}>
@@ -48,7 +48,10 @@ const HotCampaign = () => {
                 key={index + product.id}
               >
                 <ProductCard
-                  campaign={{ campaign: "16112024-000"+(index+1) }}
+                  campaign={{
+                    campaign: "16112024-000" + (index + 1),
+                    joinedNumber: 900 + index * 10,
+                  }}
                   detail={product}
                 />
               </Grid2>

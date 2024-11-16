@@ -5,6 +5,7 @@ import { Product } from "../../constant/products";
 
 type ProductCardProps = {
   campaign: string;
+  joinedNumber:number
 };
 const ProductCard = ({
   campaign,
@@ -17,7 +18,7 @@ const ProductCard = ({
 
   return (
     <Paper
-      onClick={() => navigate(`/product/${detail.id}?type=JOIN`)}
+      onClick={() => navigate(`/product/${detail.id}?type=JOIN&joined=${campaign.joinedNumber}`)}
       square
       sx={{
         position: "relative",
@@ -132,7 +133,7 @@ const ProductCard = ({
           </Typography>
         </Stack>
         <Stack direction={"column"} gap={"0px"} alignItems={"center"}>
-          <Typography variant="caption">904</Typography>
+          <Typography variant="caption">{campaign.joinedNumber}</Typography>
           <Typography variant="caption">joined</Typography>
         </Stack>
       </Stack>

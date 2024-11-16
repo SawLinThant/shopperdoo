@@ -9,12 +9,18 @@ import {
 } from "@mui/material";
 import SBreadcrumbs from "../../components/common/SBreadcrumbs";
 import { ProductDetailsImage } from "../../components/product";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
 import { productList } from "../../constant/products";
+import { useEffect } from "react";
 // import ProductOption from "../../components/product/ProductOption";
 // import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const ProductDetails = () => {
+  const location = useLocation();
+  useEffect(() => {
+    // Scroll to the top when the component is loaded
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   const [searchParams] = useSearchParams();
   const { id } = useParams();
   const product = productList.find((product) => product.id == id);

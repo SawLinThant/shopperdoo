@@ -23,9 +23,11 @@ const ProductCard = ({
       sx={{
         position: "relative",
         width: {
-          xs: "200px",
+          xs: "100%",
           md: "220px",
         },
+        
+        minHeight:"300px",
         p: 1,
         border: "1px solid transparent",
         transition: "border-color 0.3s ease",
@@ -94,7 +96,7 @@ const ProductCard = ({
           objectFit: "cover",
           width: "100%",
           height: {
-            xs: "180px",
+            xs: "220px",
             md: "220px",
           },
         }}

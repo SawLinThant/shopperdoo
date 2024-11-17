@@ -38,6 +38,7 @@ const DiscoverCampaign = () => {
               <Grid2
                 size={{
                   md: 3,
+                  sm: 4,
                   xs: 6,
                 }}
                 sx={{
